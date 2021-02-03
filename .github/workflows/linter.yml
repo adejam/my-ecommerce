@@ -1,0 +1,79 @@
+name: Checks
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+jobs:
+  prettier:
+    name: Prettier
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+      - name: Set up Node 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: Install required dependency for node
+        run: |
+          npm install
+      - name: Run Prettier
+        run: |
+          npm run format:check
+
+  stylelint:
+    name: StyleLint
+    runs-on: ubuntu-latest
+    if: always()
+
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+      - name: Set up Node 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: Install required dependency for node
+        run: |
+          npm install
+      - name: Run StyleLint
+        run: |
+          npm run stylelint:check
+
+  eslint:
+    name: ESLint
+    runs-on: ubuntu-18.04
+    if: always()
+
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+      - name: Set up Node 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: Install required dependency for node
+        run: |
+          npm install
+      - name: ESLint Report
+        run: npm run eslint:check
+
+  phpcs:
+    name: PHPcs
+    runs-on: ubuntu-18.04
+    if: always()
+
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+      - name: Install required dependency for Composer
+        uses: php-actions/composer@v4
+        with:
+          php_version: 7.4
+          composer_version: 1
+          args: --profile --ignore-platform-reqs  --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
+      - name: Composer Report
+        run: composer phpcs

@@ -225,6 +225,10 @@ a:not([href]):not([tabindex]):focus {
   .ta-center {
     text-align: center;
   }
+
+  .appearance_none {
+    appearance: none;
+  }
   
   .row {
     display: -ms-flexbox;

@@ -1838,9 +1838,19 @@ module.exports = {
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
   \*****************************/
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _dom_logics_placeholderLabel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dom-logics/placeholderLabel */ "./resources/js/dom-logics/placeholderLabel.js");
+/* harmony import */ var _dom_logics_placeholderLabel__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_dom_logics_placeholderLabel__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _dom_logics_createOptionsFromGivenValue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dom-logics/createOptionsFromGivenValue */ "./resources/js/dom-logics/createOptionsFromGivenValue.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
+
+
+var inputValue = document.querySelector('#state');
+inputValue.addEventListener('change', _dom_logics_createOptionsFromGivenValue__WEBPACK_IMPORTED_MODULE_1__.default);
 
 /***/ }),
 
@@ -1872,6 +1882,131 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/dom-logics/createOptionsFromGivenValue.js":
+/*!****************************************************************!*\
+  !*** ./resources/js/dom-logics/createOptionsFromGivenValue.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _selectInputObjectAndArrays__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../selectInputObjectAndArrays */ "./resources/js/selectInputObjectAndArrays.js");
+/* harmony import */ var _removeAllChildrenElements__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./removeAllChildrenElements */ "./resources/js/dom-logics/removeAllChildrenElements.js");
+
+
+
+var createOptionsFromGivenValue = function createOptionsFromGivenValue(e) {
+  var _e$target = e.target,
+      dataset = _e$target.dataset,
+      value = _e$target.value;
+  var fieldTocreateOptionsFor = document.querySelector("#".concat(dataset.field_to_arget));
+
+  if (value) {
+    var values = _selectInputObjectAndArrays__WEBPACK_IMPORTED_MODULE_0__.default[dataset.object_to_check][value];
+    (0,_removeAllChildrenElements__WEBPACK_IMPORTED_MODULE_1__.default)(fieldTocreateOptionsFor);
+    fieldTocreateOptionsFor.removeAttribute('disabled');
+    values.forEach(function (value) {
+      var option = document.createElement('OPTION');
+      option.innerHTML = value;
+      fieldTocreateOptionsFor.appendChild(option);
+    });
+  } else {
+    (0,_removeAllChildrenElements__WEBPACK_IMPORTED_MODULE_1__.default)(fieldTocreateOptionsFor);
+    fieldTocreateOptionsFor.setAttribute('disabled', 'true');
+  }
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (createOptionsFromGivenValue);
+
+/***/ }),
+
+/***/ "./resources/js/dom-logics/placeholderLabel.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/dom-logics/placeholderLabel.js ***!
+  \*****************************************************/
+/***/ (() => {
+
+var inputs = document.querySelectorAll('.input');
+
+function addcl() {
+  var parent = this.parentNode.parentNode;
+  parent.classList.add('focus');
+}
+
+function remcl() {
+  var parent = this.parentNode.parentNode;
+
+  if (this.value === '') {
+    parent.classList.remove('focus');
+  }
+}
+
+inputs.forEach(function (input) {
+  input.addEventListener('focus', addcl);
+  input.addEventListener('blur', remcl);
+});
+
+/***/ }),
+
+/***/ "./resources/js/dom-logics/removeAllChildrenElements.js":
+/*!**************************************************************!*\
+  !*** ./resources/js/dom-logics/removeAllChildrenElements.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var removeAllChildrenElements = function removeAllChildrenElements(parentElement) {
+  while (parentElement.firstChild) {
+    parentElement.firstChild.remove();
+  }
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (removeAllChildrenElements);
+
+/***/ }),
+
+/***/ "./resources/js/selectInputObjectAndArrays.js":
+/*!****************************************************!*\
+  !*** ./resources/js/selectInputObjectAndArrays.js ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var selectInputObjectAndArrays = {
+  states: {
+    lagos: ['', 'ogudu', 'ojota'],
+    oyo: ['', 'ogbomosho', 'ibadan']
+  }
+}; // const returnAreas = ({e:{target}}) => {
+// if (e.target.value) {
+//   const areaValue = document.querySelector('#area');
+//   const areas = states[e.target.value];
+//   while (areaValue.firstChild) {
+//     areaValue.firstChild.remove();
+//   }
+//   areas.forEach((area) => {
+//     const option = document.createElement('OPTION');
+//     option.innerHTML = area;
+//     areaValue.appendChild(option);
+//   });
+// }
+// };
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (selectInputObjectAndArrays);
 
 /***/ }),
 
@@ -19294,6 +19429,30 @@ process.umask = function() { return 0; };
 /******/ 	// It's empty as some runtime module handles the default behavior
 /******/ 	__webpack_require__.x = x => {};
 /************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/global */
 /******/ 	(() => {
 /******/ 		__webpack_require__.g = (function() {

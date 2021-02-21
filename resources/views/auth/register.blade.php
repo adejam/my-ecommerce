@@ -55,11 +55,11 @@
                         </div>
                     @endif
                 </div>
-                <div class="form-footer">
-                    <a href="{{ route('login') }}">Sign in</a>
-                    <a href="#">Forgot Password?</a>
-                </div>
 
                 <input type="submit" class="btn" value="Register">
+                <div class="form-footer">
+                    <a href="{{ route('login') }}">Sign in</a>
+                    <a href="{{ route('password.request') }}">Forgot Password?</a>
+                </div>
         </form>
     </x-guest-layout>

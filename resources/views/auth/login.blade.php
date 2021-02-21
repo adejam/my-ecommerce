@@ -1,5 +1,5 @@
 <x-guest-layout>
-    @section('title', 'Welcome')
+    @section('title', 'Login')
         <form action="{{ route('login') }}" method="POST">
             @csrf
             <img src="{{ asset('images/avatar.svg') }}">
@@ -24,10 +24,10 @@
             <x-input-without-borders
                 :input="['value' => '', 'name' => 'password', 'title' => 'Password', 'type' => 'password']" />
 
+            <input type="submit" class="btn" value="Login">
             <div class="form-footer">
                 <a href="{{ route('register') }}">Create account</a>
-                <a href="#">Forgot Password?</a>
+                <a href="{{ route('password.request') }}">Forgot Password?</a>
             </div>
-            <input type="submit" class="btn" value="Login">
         </form>
     </x-guest-layout>

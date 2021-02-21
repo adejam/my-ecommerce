@@ -1854,6 +1854,27 @@ inputValue.addEventListener('change', _dom_logics_createOptionsFromGivenValue__W
 
 /***/ }),
 
+/***/ "./resources/js/arrays/selectInputObjectAndArrays.js":
+/*!***********************************************************!*\
+  !*** ./resources/js/arrays/selectInputObjectAndArrays.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var selectInputObjectAndArrays = {
+  states: {
+    lagos: ['', 'ogudu', 'ojota'],
+    oyo: ['', 'ogbomosho', 'ibadan']
+  }
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (selectInputObjectAndArrays);
+
+/***/ }),
+
 /***/ "./resources/js/bootstrap.js":
 /*!***********************************!*\
   !*** ./resources/js/bootstrap.js ***!
@@ -1896,7 +1917,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _selectInputObjectAndArrays__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../selectInputObjectAndArrays */ "./resources/js/selectInputObjectAndArrays.js");
+/* harmony import */ var _arrays_selectInputObjectAndArrays__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../arrays/selectInputObjectAndArrays */ "./resources/js/arrays/selectInputObjectAndArrays.js");
 /* harmony import */ var _removeAllChildrenElements__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./removeAllChildrenElements */ "./resources/js/dom-logics/removeAllChildrenElements.js");
 
 
@@ -1905,10 +1926,10 @@ var createOptionsFromGivenValue = function createOptionsFromGivenValue(e) {
   var _e$target = e.target,
       dataset = _e$target.dataset,
       value = _e$target.value;
-  var fieldTocreateOptionsFor = document.querySelector("#".concat(dataset.field_to_arget));
+  var fieldTocreateOptionsFor = document.querySelector("#".concat(dataset.field_to_target));
 
   if (value) {
-    var values = _selectInputObjectAndArrays__WEBPACK_IMPORTED_MODULE_0__.default[dataset.object_to_check][value];
+    var values = _arrays_selectInputObjectAndArrays__WEBPACK_IMPORTED_MODULE_0__.default[dataset.object_to_check][value];
     (0,_removeAllChildrenElements__WEBPACK_IMPORTED_MODULE_1__.default)(fieldTocreateOptionsFor);
     fieldTocreateOptionsFor.removeAttribute('disabled');
     values.forEach(function (value) {
@@ -1972,41 +1993,6 @@ var removeAllChildrenElements = function removeAllChildrenElements(parentElement
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (removeAllChildrenElements);
-
-/***/ }),
-
-/***/ "./resources/js/selectInputObjectAndArrays.js":
-/*!****************************************************!*\
-  !*** ./resources/js/selectInputObjectAndArrays.js ***!
-  \****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-var selectInputObjectAndArrays = {
-  states: {
-    lagos: ['', 'ogudu', 'ojota'],
-    oyo: ['', 'ogbomosho', 'ibadan']
-  }
-}; // const returnAreas = ({e:{target}}) => {
-// if (e.target.value) {
-//   const areaValue = document.querySelector('#area');
-//   const areas = states[e.target.value];
-//   while (areaValue.firstChild) {
-//     areaValue.firstChild.remove();
-//   }
-//   areas.forEach((area) => {
-//     const option = document.createElement('OPTION');
-//     option.innerHTML = area;
-//     areaValue.appendChild(option);
-//   });
-// }
-// };
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (selectInputObjectAndArrays);
 
 /***/ }),
 

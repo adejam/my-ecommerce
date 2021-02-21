@@ -14,7 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get(
-    '/', function () {
+    '/',
+    function () {
         return view('welcome');
     }
 );
+
+Route::middleware(['auth', 'verified'])->get(
+    '/home',
+    function () {
+        return view('home');
+    }
+)->name('home');

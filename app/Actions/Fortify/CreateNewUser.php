@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
+use DB;
 
 class CreateNewUser implements CreatesNewUsers
 {
@@ -21,7 +22,11 @@ class CreateNewUser implements CreatesNewUsers
     public function create(array $input)
     {
         Validator::make($input, [
-            'name' => ['required', 'string', 'max:255'],
+            'firstname' => ['required', 'string', 'max:255'],
+            'lastname' => ['required', 'string', 'max:255'],
+            // 'country' => ['required', 'string', 'max:255'],
+            'state' => ['required', 'string', 'max:255'],
+            'area' => ['required', 'string', 'max:255'],
             'email' => [
                 'required',
                 'string',
@@ -31,10 +36,17 @@ class CreateNewUser implements CreatesNewUsers
             ],
             'password' => $this->passwordRules(),
         ])->validate();
-
+        // $last2 = DB::table('items')->orderBy('id', 'DESC')->first();
+        $lastUserId = DB::table('users')->select('id')->latest()->first();
+        $id = $lastUserId ? $lastUserId+1 : 1;
         return User::create([
-            'name' => $input['name'],
+            'firstname' => $input['firstname'],
+            'lastname' => $input['lastname'],
+            'username' => $input['firstname'].'-'.$input['lastname'].$id,
+            'state' => $input['state'],
+            'area' => $input['area'],
             'email' => $input['email'],
+            'country' => 'nigeria',
             'password' => Hash::make($input['password']),
         ]);
     }

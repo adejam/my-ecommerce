@@ -224,6 +224,12 @@ h6, .h6 {
   text-align: center;
 }
 
+.appearance_none {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
 .row {
   display: flex;
   flex-wrap: wrap;

@@ -11,6 +11,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Fortify\Fortify;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class FortifyServiceProvider extends ServiceProvider
 {
@@ -52,6 +54,7 @@ class FortifyServiceProvider extends ServiceProvider
 
         Fortify::loginView(fn () => view('auth.login'));
         Fortify::registerView(fn () => view('auth.register'));
+        // Fortify::registerView(fn () => countriesAndCodesFunc());
 
         Fortify::authenticateUsing(
             function (Request $request) {

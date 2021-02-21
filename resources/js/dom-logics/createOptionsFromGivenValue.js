@@ -1,9 +1,9 @@
-import selectInputObjectAndArrays from '../selectInputObjectAndArrays';
+import selectInputObjectAndArrays from '../arrays/selectInputObjectAndArrays';
 import removeAllChildrenElements from './removeAllChildrenElements';
 
 const createOptionsFromGivenValue = (e) => {
   const { dataset, value } = e.target;
-  const fieldTocreateOptionsFor = document.querySelector(`#${dataset.field_to_arget}`);
+  const fieldTocreateOptionsFor = document.querySelector(`#${dataset.field_to_target}`);
   if (value) {
     const values = selectInputObjectAndArrays[dataset.object_to_check][value];
     removeAllChildrenElements(fieldTocreateOptionsFor);

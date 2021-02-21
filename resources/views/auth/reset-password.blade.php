@@ -1,5 +1,5 @@
 <x-guest-layout>
-    @section('title', 'Forgot-password')
+    @section('title', 'Reset-password')
     <form action="{{ route('password.update') }}" method="POST">
         @csrf
         <input type="hidden" name="token" value="{{$request->route('token')}}"/>

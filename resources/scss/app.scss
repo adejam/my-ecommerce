@@ -1,5 +1,10 @@
 @import 'config';
 @import 'reset';
+@import 'mixins';
 @import 'utilities';
 
-// @import 'small_screen.css' screen and (min-width: 576px);
+@import 'extra_small_screen';
+@import 'small_screen';
+@import 'medium_screen';
+@import 'large_screen';
+@import 'extra_large_screen';

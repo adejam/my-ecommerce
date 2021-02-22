@@ -55,6 +55,7 @@
                         </div>
                     @endif
                 </div>
+            </div>
 
                 <input type="submit" class="btn" value="Register">
                 <div class="form-footer">

@@ -20,9 +20,16 @@ Route::get(
     }
 );
 
-Route::middleware(['auth', 'verified'])->get(
-    '/home',
+Route::get(
+    '/login-with-recovery-code',
     function () {
-        return view('home');
+        return view('auth.recovery-code');
     }
-)->name('home');
+)->name('recovery-code');
+
+Route::middleware(['auth', 'verified'])->group(
+    function () {
+        Route::get("/home", fn () => view('user.home'))->name('home');
+        Route::get("/profile", fn () => view('user.profile.profile'))->name('profile');
+    }
+);

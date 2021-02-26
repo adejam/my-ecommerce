@@ -1845,14 +1845,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _dom_logics_placeholderLabel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dom-logics/placeholderLabel */ "./resources/js/dom-logics/placeholderLabel.js");
 /* harmony import */ var _dom_logics_placeholderLabel__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_dom_logics_placeholderLabel__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _dom_logics_createOptionsFromGivenValue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dom-logics/createOptionsFromGivenValue */ "./resources/js/dom-logics/createOptionsFromGivenValue.js");
+/* harmony import */ var _dom_logics_showSearchResults__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./dom-logics/showSearchResults */ "./resources/js/dom-logics/showSearchResults.js");
+/* harmony import */ var _dom_logics_closeSearchboxFunc__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dom-logics/closeSearchboxFunc */ "./resources/js/dom-logics/closeSearchboxFunc.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
 
+
+
 var stateValue = document.querySelector('#state');
+var searchInput = document.querySelector('#search');
+var closeSearchbox = document.querySelector("#close_searchbox");
 
 if (stateValue) {
   stateValue.addEventListener('change', _dom_logics_createOptionsFromGivenValue__WEBPACK_IMPORTED_MODULE_1__.default);
+}
+
+if (searchInput) {
+  searchInput.addEventListener('keyup', _dom_logics_showSearchResults__WEBPACK_IMPORTED_MODULE_2__.default);
+}
+
+if (closeSearchbox) {
+  closeSearchbox.addEventListener('click', _dom_logics_closeSearchboxFunc__WEBPACK_IMPORTED_MODULE_3__.default);
 }
 
 /***/ }),
@@ -1906,6 +1920,32 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/dom-logics/closeSearchboxFunc.js":
+/*!*******************************************************!*\
+  !*** ./resources/js/dom-logics/closeSearchboxFunc.js ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var closeSearchboxFunc = function closeSearchboxFunc(e) {
+  var _e$currentTarget = e.currentTarget,
+      dataset = _e$currentTarget.dataset,
+      classList = _e$currentTarget.classList;
+  var searchBarSection = document.querySelector("#".concat(dataset.parent_to_target));
+  var suggestionSection = document.querySelector("#".concat(dataset.box));
+  searchBarSection.classList.remove('show-search');
+  suggestionSection.classList.add('d-none');
+  classList.add('d-none');
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (closeSearchboxFunc);
 
 /***/ }),
 
@@ -1996,6 +2036,39 @@ var removeAllChildrenElements = function removeAllChildrenElements(parentElement
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (removeAllChildrenElements);
+
+/***/ }),
+
+/***/ "./resources/js/dom-logics/showSearchResults.js":
+/*!******************************************************!*\
+  !*** ./resources/js/dom-logics/showSearchResults.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var showSearchResults = function showSearchResults(e) {
+  var _e$target = e.target,
+      dataset = _e$target.dataset,
+      value = _e$target.value;
+  var searchBarSection = document.querySelector("#".concat(dataset.parent_to_target));
+  var suggestionSection = document.querySelector("#".concat(dataset.box));
+  var closeSearchbox = document.querySelector("#".concat(dataset.close_searchbox));
+  searchBarSection.classList.add('show-search');
+  suggestionSection.classList.remove('d-none');
+  closeSearchbox.classList.remove('d-none');
+
+  if (value.length < 1) {
+    searchBarSection.classList.remove('show-search');
+    suggestionSection.classList.add('d-none');
+    closeSearchbox.classList.add('d-none');
+  }
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (showSearchResults);
 
 /***/ }),
 

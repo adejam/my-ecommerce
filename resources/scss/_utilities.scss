@@ -57,3 +57,46 @@ $values: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20)
     padding: 0 #{$value}rem;
   }
 }
+
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.navbar-link-active {
+  @include navLinkBorderColor(#374151, $primary);
+  &:hover {
+    @include navLinkBorderColor(#374151, $primary);
+  }
+}
+
+.navbar-link-inactive {
+  @include navLinkBorderColor(#6b7280, $transparent);
+  &:hover {
+    @include navLinkBorderColor(#374151, #d2d6dc);
+  }
+}
+
+.navbar-link {
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow,
+    transform;
+  padding: 0.25rem 0.25rem 0 0.25rem;
+  line-height: 1.25rem;
+  font-weight: $weight-medium;
+  align-items: $center;
+  border-bottom-width: 2px;
+  border-style: solid;
+  display: $inline-flex;
+  &:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    @include navLinkBorderColor(#374151, #d2d6dc);
+  }
+  &:hover {
+    text-decoration: $none;
+  }
+}

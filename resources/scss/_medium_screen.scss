@@ -1,5 +1,12 @@
 @media screen and (min-width: $breakpoint-md) {
-    body{
-        background-color: cyan !important;
+  .navbar {
+    .navbar-list {
+      display: $flex;
+      margin-left: 1.5rem;
+      .navbar-item {
+        display: $flex;
+        margin: -1px 0 -1px 2.5rem;
+      }
     }
+  }
 }

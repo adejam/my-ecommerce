@@ -8,7 +8,7 @@
     <title>@yield('title') . Communivis</title>
      <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-    @livewireStyles
+    {{-- @livewireStyles --}}
 
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
@@ -17,11 +17,12 @@
 <body class="font-sans antialiased bg-white">
     <div class="min-h-screen bg-white">
         {{-- @livewire('navigation-dropdown') --}}
+        <x-navbar />
         <section class="flex w-full min-h-screen">
             {{-- <x-side-nav :tabs="sideNavDatas()" /> --}}
 
-            <main class="xl:w-9/12 medium:w-8/12 w-full md:flex">
-                <div class="md:w-2/3 mx-auto medium:border-r border-gray-100">
+            <main class="">
+                <div class="">
                     <div id="alert-div">
                         <x-session-message />
                     </div>
@@ -40,7 +41,7 @@
 
     @stack('modals')
 
-    @livewireScripts
+    {{-- @livewireScripts --}}
 </body>
 
 </html>

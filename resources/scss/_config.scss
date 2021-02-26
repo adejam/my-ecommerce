@@ -31,29 +31,17 @@ $breakpoint-sm: 480px;
 $breakpoint-md: 768px;
 $breakpoint-lg: 992px;
 $breakpoint-xl: 1200px;
-
-@mixin textShadow() {
-  text-shadow: #c5a05b 0 0 8px;
-}
-
-%flexcentercenter {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@mixin flexcentercentercolumn() {
-  @extend %flexcentercenter;
-
-  flex-direction: column;
-}
-
-@function set-color-due-to-background($color) {
-  @if (lightness($color) > 70) {
-    @return $color_21;
-  }
-
-  @else {
-    @return $color_eee;
-  }
-}
+$center : center;
+$flex: flex;
+$space-between: space-between;
+$row: row;
+$column: column;
+$block: block;
+$relative: relative;
+$hidden: hidden;
+$text-sm: 0.875rem;
+$weight-medium: 500;
+$inline-flex: inline-flex;
+$transparent: transparent;
+$none: none;
+$shadow-md: 0 1px 6px 0 rgb(32 33 36 / 28%);

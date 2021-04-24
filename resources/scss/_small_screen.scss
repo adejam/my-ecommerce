@@ -1,5 +1,19 @@
 @media screen and (min-width: $breakpoint-sm) {
-    body{
-        background-color: $white;
-    }
+  .container {
+    max-width: 540px;
+  }
+
+  @include set-class('sm', $displays, 'd', 'display');
+
+  @include set-class('sm', $directions, 'flex', 'flex-direction');
+
+  @include set-class('sm', $wraps, 'flex', 'flex-wrap');
+
+  @include set-class('sm', $justify, 'justify', 'justify-content');
+
+  @include set-class('sm', $items, 'align', 'align-items');
+
+  @include set-class('sm', $items, 'align-self', 'align-self');
+
+  @include set-col('sm', $colNumbersAndSizes);
 }

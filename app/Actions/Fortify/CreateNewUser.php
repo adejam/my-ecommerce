@@ -36,9 +36,8 @@ class CreateNewUser implements CreatesNewUsers
             ],
             'password' => $this->passwordRules(),
         ])->validate();
-        // $last2 = DB::table('items')->orderBy('id', 'DESC')->first();
         $lastUserId = DB::table('users')->select('id')->latest()->first();
-        $id = $lastUserId ? $lastUserId+1 : 1;
+        $id = $lastUserId ? $lastUserId->id+1 : 1;
         return User::create([
             'firstname' => $input['firstname'],
             'lastname' => $input['lastname'],

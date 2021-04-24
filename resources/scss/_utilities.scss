@@ -1,102 +1,33 @@
-$values: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20);
+@include set-class('', $displays, 'd', 'display');
 
-@each $value in $values {
-  .m-#{$value} {
-    margin: #{$value}rem;
-  }
+@include set-class('', $directions, 'flex', 'flex-direction');
 
-  .mt-#{$value} {
-    margin-top: #{$value}rem;
-  }
+@include set-class('', $wraps, 'flex', 'flex-wrap');
 
-  .mb-#{$value} {
-    margin-bottom: #{$value}rem;
-  }
+@include set-class('', $justify, 'justify', 'justify-content');
 
-  .ml-#{$value} {
-    margin-left: #{$value}rem;
-  }
+@include set-class('', $items, 'align', 'align-items');
 
-  .mr-#{$value} {
-    margin-right: #{$value}rem;
-  }
+@include set-class('', $items, 'align-self', 'align-self');
 
-  .my-#{$value} {
-    margin: #{$value}rem 0;
-  }
-
-  .mx-#{$value} {
-    margin: 0 #{$value}rem;
-  }
-
-  .p-#{$value} {
-    padding: #{$value}rem;
-  }
-
-  .pt-#{$value} {
-    padding-top: #{$value}rem;
-  }
-
-  .pb-#{$value} {
-    padding-bottom: #{$value}rem;
-  }
-
-  .pl-#{$value} {
-    padding-left: #{$value}rem;
-  }
-
-  .pr-#{$value} {
-    padding-right: #{$value}rem;
-  }
-
-  .py-#{$value} {
-    padding: #{$value}rem 0;
-  }
-
-  .px-#{$value} {
-    padding: 0 #{$value}rem;
-  }
-}
-
-.row {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
+@include set-col('', $colNumbersAndSizes);
 
 .navbar-link-active {
+
   @include navLinkBorderColor(#374151, $primary);
+
   &:hover {
+
     @include navLinkBorderColor(#374151, $primary);
   }
 }
 
 .navbar-link-inactive {
-  @include navLinkBorderColor(#6b7280, $transparent);
-  &:hover {
-    @include navLinkBorderColor(#374151, #d2d6dc);
-  }
-}
 
-.navbar-link {
-  transition-duration: 150ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow,
-    transform;
-  padding: 0.25rem 0.25rem 0 0.25rem;
-  line-height: 1.25rem;
-  font-weight: $weight-medium;
-  align-items: $center;
-  border-bottom-width: 2px;
-  border-style: solid;
-  display: $inline-flex;
-  &:focus {
-    outline: 2px solid transparent;
-    outline-offset: 2px;
-    @include navLinkBorderColor(#374151, #d2d6dc);
-  }
+  @include navLinkBorderColor(#6b7280, $transparent);
+
   &:hover {
-    text-decoration: $none;
+
+    @include navLinkBorderColor(#374151, #d2d6dc);
   }
 }

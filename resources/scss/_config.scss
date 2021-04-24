@@ -2,7 +2,7 @@ $color_eee: #eee;
 $color_21: #202124;
 $light-color: #f7f4f4;
 $white: #fff;
-$primary-color: #1DA1F2;
+$primary-color: #1da1f2;
 $font-stack: arial, helvetica, sans-serif;
 $blue: #007bff;
 $indigo: #6610f2;
@@ -45,3 +45,23 @@ $inline-flex: inline-flex;
 $transparent: transparent;
 $none: none;
 $shadow-md: 0 1px 6px 0 rgb(32 33 36 / 28%);
+$full: 100%;
+$displays: (none, block, flex, inline, inline-block);
+$directions: (row, column);
+$wraps: (wrap, nowrap);
+$justify: (center, start, space-between, end, space-around, space-evenly, flex-start, flex-end);
+$items: (center, start, flex-start, end, flex-end, stretch);
+$colNumbersAndSizes: (
+  1: (8.333333%),
+  2: (16.666667%),
+  3: (25%),
+  4: (33.333333%),
+  5: (41.666667%),
+  6: (50%),
+  7: (58.333333%),
+  8: (66.666667%),
+  9: (75%),
+  10: (83.333333%),
+  11: (91.666667%),
+  12: (100%),
+);

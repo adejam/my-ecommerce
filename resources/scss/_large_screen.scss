@@ -1,5 +1,23 @@
 @media screen and (min-width: $breakpoint-lg) {
-    body{
-        background-color: $white;
-    }
+  .container {
+    max-width: 960px;
+  }
+
+  @include set-class('lg', $displays, 'd', 'display');
+
+  @include set-class('lg', $directions, 'flex', 'flex-direction');
+
+  @include set-class('lg', $wraps, 'flex', 'flex-wrap');
+
+  @include set-class('lg', $justify, 'justify', 'justify-content');
+
+  @include set-class('lg', $items, 'align', 'align-items');
+
+  @include set-class('lg', $items, 'align-self', 'align-self');
+
+  @include set-col('lg', $colNumbersAndSizes);
+
+  .search-bar-result-cont {
+    display: block;
+  }
 }

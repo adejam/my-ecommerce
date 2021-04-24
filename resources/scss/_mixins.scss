@@ -1,65 +1,101 @@
 @mixin textShadow() {
-    text-shadow: #c5a05b 0 0 8px;
-  }
-  
-  @mixin navLinkBorderColor($color, $border-color) {
-      color: $color;
-      border-color: $border-color;
-  }
-  
-  @mixin shadow-sm() {
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-  }
-  
-  @mixin shadow-md() {
+  text-shadow: #c5a05b 0 0 8px;
+}
+
+@mixin navLinkBorderColor($color, $border-color) {
+  color: $color;
+  border-color: $border-color;
+}
+
+@mixin shadow-sm() {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+@mixin shadow-md() {
   box-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%);
-  }
-  
-  @mixin shadow() {
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  }
-  
-  @mixin shadow-lg() {
-    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
-  }
-      
-  
-  %flexcentercenter {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  @mixin flexcentercentercolumn() {
-    @extend %flexcentercenter;
-  
-    flex-direction: column;
-  }
-  
-  @mixin wh_2rem() {
+}
+
+@mixin shadow() {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+@mixin shadow-lg() {
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+}
+
+@mixin wh_2rem() {
   width: 2rem;
   height: 2rem;
+}
+
+@mixin wh_2_4rem() {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+@mixin svgParentSpan() {
+  display: inline-block;
+  fill: currentColor;
+  line-height: 2.4rem;
+  position: relative;
+}
+
+@function set-color-due-to-background($color) {
+
+  @if (lightness($color) > 70) {
+
+    @return $color_21;
   }
-  
-  @mixin wh_2_4rem() {
-    width: 2.4rem;
-    height: 2.4rem;
-    }
-  
-  @mixin svgParentSpan() {
-    display: inline-block;
-    fill: currentColor;
-    line-height: 2.4rem;
-    position: relative;
+
+  @else {
+
+    @return $color_eee;
   }
-  
-  @function set-color-due-to-background($color) {
-    @if (lightness($color) > 70) {
-      @return $color_21;
+}
+
+@mixin set-class($screenSize, $variables, $classPrefix, $cssProperty) {
+
+  @if ($screenSize == '') {
+
+    @each $variable in $variables {
+      .#{$classPrefix}-#{$variable} {
+        #{$cssProperty}: #{$variable};
+      }
     }
-  
+  }
+
+  @else {
+
+    @each $variable in $variables {
+      .#{$classPrefix}-#{$screenSize}-#{$variable} {
+        #{$cssProperty}: #{$variable};
+      }
+    }
+  }
+}
+
+@mixin set-col($screenSize, $colNumbersAndSizes) {
+
+  @each $colNumber, $colSize in $colNumbersAndSizes {
+
+    @if ($screenSize == '') {
+      .col-#{$colNumber} {
+        flex: 0 0 ($colSize);
+        max-width: $colSize;
+      }
+      .offset-#{$colNumber} {
+        margin-left: $colSize;
+      }
+    }
+
     @else {
-      @return $color_eee;
+      .col-#{$screenSize}-#{$colNumber} {
+        flex: 0 0 ($colSize);
+        max-width: $colSize;
+      }
+      .offset-#{$screenSize}-#{$colNumber} {
+        margin-left: $colSize;
+      }
     }
   }
-  
+}

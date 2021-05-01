@@ -152,6 +152,11 @@
 
 .clear-btn-div {
   flex: 0 0 auto;
+  background: #fff;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 .clear-btn-inner {

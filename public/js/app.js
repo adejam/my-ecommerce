@@ -1846,7 +1846,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _dom_logics_placeholderLabel__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_dom_logics_placeholderLabel__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _dom_logics_createOptionsFromGivenValue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dom-logics/createOptionsFromGivenValue */ "./resources/js/dom-logics/createOptionsFromGivenValue.js");
 /* harmony import */ var _dom_logics_showSearchResults__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./dom-logics/showSearchResults */ "./resources/js/dom-logics/showSearchResults.js");
-/* harmony import */ var _dom_logics_closeSearchboxFunc__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dom-logics/closeSearchboxFunc */ "./resources/js/dom-logics/closeSearchboxFunc.js");
+/* harmony import */ var _dom_logics_closeSuggestionBoxFunc__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dom-logics/closeSuggestionBoxFunc */ "./resources/js/dom-logics/closeSuggestionBoxFunc.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
@@ -1855,7 +1855,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 var stateValue = document.querySelector('#state');
 var searchInput = document.querySelector('#search');
-var closeSearchbox = document.querySelector("#close_searchbox");
+var closeSuggestionBox = document.querySelector("#close-suggestion-box");
 
 if (stateValue) {
   stateValue.addEventListener('change', _dom_logics_createOptionsFromGivenValue__WEBPACK_IMPORTED_MODULE_1__.default);
@@ -1865,8 +1865,8 @@ if (searchInput) {
   searchInput.addEventListener('keyup', _dom_logics_showSearchResults__WEBPACK_IMPORTED_MODULE_2__.default);
 }
 
-if (closeSearchbox) {
-  closeSearchbox.addEventListener('click', _dom_logics_closeSearchboxFunc__WEBPACK_IMPORTED_MODULE_3__.default);
+if (closeSuggestionBox) {
+  closeSuggestionBox.addEventListener('click', _dom_logics_closeSuggestionBoxFunc__WEBPACK_IMPORTED_MODULE_3__.default);
 }
 
 /***/ }),
@@ -1923,10 +1923,10 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/js/dom-logics/closeSearchboxFunc.js":
-/*!*******************************************************!*\
-  !*** ./resources/js/dom-logics/closeSearchboxFunc.js ***!
-  \*******************************************************/
+/***/ "./resources/js/dom-logics/closeSuggestionBoxFunc.js":
+/*!***********************************************************!*\
+  !*** ./resources/js/dom-logics/closeSuggestionBoxFunc.js ***!
+  \***********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -1934,7 +1934,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-var closeSearchboxFunc = function closeSearchboxFunc(e) {
+var closeSuggestionBoxFunc = function closeSuggestionBoxFunc(e) {
   var _e$currentTarget = e.currentTarget,
       dataset = _e$currentTarget.dataset,
       classList = _e$currentTarget.classList;
@@ -1945,7 +1945,7 @@ var closeSearchboxFunc = function closeSearchboxFunc(e) {
   classList.add('d-none');
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (closeSearchboxFunc);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (closeSuggestionBoxFunc);
 
 /***/ }),
 

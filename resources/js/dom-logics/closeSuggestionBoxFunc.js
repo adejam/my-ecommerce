@@ -1,4 +1,4 @@
-const closeSearchboxFunc = (e) => {
+const closeSuggestionBoxFunc = e => {
   const { dataset, classList } = e.currentTarget;
   const searchBarSection = document.querySelector(`#${dataset.parent_to_target}`);
   const suggestionSection = document.querySelector(`#${dataset.box}`);
@@ -7,4 +7,4 @@ const closeSearchboxFunc = (e) => {
   classList.add('d-none');
 };
 
-export default closeSearchboxFunc;
+export default closeSuggestionBoxFunc;

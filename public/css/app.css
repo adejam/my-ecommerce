@@ -1575,6 +1575,10 @@ h6,
 
 .clear-btn-div {
   flex: 0 0 auto;
+  background: #fff;
+}
+.clear-btn-div:focus {
+  outline: none;
 }
 
 .clear-btn-inner {

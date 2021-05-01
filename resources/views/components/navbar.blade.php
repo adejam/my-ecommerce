@@ -12,9 +12,9 @@
                         <div class="search-div d-flex flex-1">
                             <input type="search" class="search-input b-none d-flex" name="search" id="search"
                                 data-parent_to_target="search-bar-section" data-box="suggestion-section"
-                                data-close_searchbox="close_searchbox" />
+                                data-close_searchbox="close-suggestion-box" />
                         </div>
-                        <div class="clear-btn-div d-flex align-stretch flex-row" id="close_searchbox"
+                        <button type="reset" class="clear-btn-div d-none align-stretch flex-row" id="close-suggestion-box"
                             data-parent_to_target="search-bar-section" data-box="suggestion-section">
                             <div class="clear-btn-inner d-flex pointer align-center b-none">
                                 <span class="clear-btn-span h-full d-inline-block pos-relative">
@@ -26,7 +26,7 @@
                                 </span>
                                 <span class="clear-btn-border-left"></span>
                             </div>
-                        </div>
+                        </button>
                     </div>
                     <button class="search-btn b-none pointer" aria-label="Search">
                         <div class="search-btn-div m-auto">

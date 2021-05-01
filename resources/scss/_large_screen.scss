@@ -16,8 +16,4 @@
   @include set-class('lg', $items, 'align-self', 'align-self');
 
   @include set-col('lg', $colNumbersAndSizes);
-
-  .search-bar-result-cont {
-    display: block;
-  }
 }

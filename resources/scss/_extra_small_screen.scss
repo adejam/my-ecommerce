@@ -16,4 +16,12 @@
   @include set-class('xs', $items, 'align-self', 'align-self');
 
   @include set-col('xs', $colNumbersAndSizes);
+
+  .logo-img {
+    width: 7rem;
+  }
+
+  .navbar-link {
+    min-width: 4rem;
+  }
 }

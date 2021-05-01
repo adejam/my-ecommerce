@@ -10,7 +10,79 @@
 
 @include set-class('', $items, 'align-self', 'align-self');
 
+@include set-class('', $positions, 'pos', 'position');
+
+@include set-class('', $flexes, 'flex', 'flex');
+
+@include set-class('', $ta, 'ta', 'text-align');
+
+@include set-class('', $transforms, 'tt', 'text-transform');
+
+@include set-class('', $overflows, 'overflow', 'overflow');
+
+@include set-class-property($colors, 'text', 'color');
+
+@include set-class-property($colors, 'bg', 'background-color');
+
 @include set-col('', $colNumbersAndSizes);
+
+@each $value in $values {
+  .m-#{$value} {
+    margin: #{$value}rem;
+  }
+
+  .mt-#{$value} {
+    margin-top: #{$value}rem;
+  }
+
+  .mb-#{$value} {
+    margin-bottom: #{$value}rem;
+  }
+
+  .ml-#{$value} {
+    margin-left: #{$value}rem;
+  }
+
+  .mr-#{$value} {
+    margin-right: #{$value}rem;
+  }
+
+  .mtb-#{$value} {
+    margin: #{$value}rem 0;
+  }
+
+  .mlr-#{$value} {
+    margin: 0 #{$value}rem;
+  }
+
+  .p-#{$value} {
+    padding: #{$value}rem;
+  }
+
+  .pt-#{$value} {
+    padding-top: #{$value}rem;
+  }
+
+  .pb-#{$value} {
+    padding-bottom: #{$value}rem;
+  }
+
+  .pl-#{$value} {
+    padding-left: #{$value}rem;
+  }
+
+  .pr-#{$value} {
+    padding-right: #{$value}rem;
+  }
+
+  .ptb-#{$value} {
+    padding: #{$value}rem 0;
+  }
+
+  .plr-#{$value} {
+    padding: 0 #{$value}rem;
+  }
+}
 
 .navbar-link-active {
 

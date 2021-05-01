@@ -16,4 +16,35 @@
   @include set-class('sm', $items, 'align-self', 'align-self');
 
   @include set-col('sm', $colNumbersAndSizes);
+
+  .logo-img {
+    width: 8rem;
+  }
+
+  .navbar-link {
+    min-width: 5rem !important;
+  }
+
+  .nav-link-logo {
+    height: 2.4rem;
+    width: 2.4rem;
+  }
+
+  .badge-cont {
+    height: 1.6rem;
+    min-width: 0.8rem;
+  }
+
+  .badge-text {
+    font-weight: 500;
+    font-size: 1.2rem;
+  }
+
+  .navbar-item {
+    margin-left: 2.5rem;
+  }
+
+  .navbar {
+    padding: 0 1rem;
+  }
 }

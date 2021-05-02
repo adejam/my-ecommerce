@@ -86,11 +86,11 @@
 
 .navbar-link-active {
 
-  @include navLinkBorderColor(#374151, $primary);
+  @include navLinkBorderColor($primary-color, $primary-color);
 
   &:hover {
 
-    @include navLinkBorderColor(#374151, $primary);
+    @include navLinkBorderColor($primary-color, $primary-color);
   }
 }
 
@@ -100,6 +100,6 @@
 
   &:hover {
 
-    @include navLinkBorderColor(#374151, #d2d6dc);
+    @include navLinkBorderColor($primary-color, #d2d6dc);
   }
 }

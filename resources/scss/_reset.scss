@@ -216,32 +216,32 @@ h6,
 
 h1,
 .h1 {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
 }
 
 h2,
 .h2 {
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
 h3,
 .h3 {
-  font-size: 1.75rem;
+  font-size: 2.75rem;
 }
 
 h4,
 .h4 {
-  font-size: 1.5rem;
+  font-size: 2.5rem;
 }
 
 h5,
 .h5 {
-  font-size: 1.25rem;
+  font-size: 2rem;
 }
 
 h6,
 .h6 {
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 .col-1,
@@ -423,4 +423,37 @@ h6,
 
 .h-full {
   height: 100%;
+}
+
+.t-0 {
+  top: 0;
+}
+
+.l-0 {
+  left: 0;
+}
+
+.r-0 {
+  right: 0;
+}
+
+.b-0 {
+  bottom: 0;
+}
+
+.m-auto {
+  margin: auto;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.mr-auto {
+  margin-right: auto;
+}
+
+.mlr-auto {
+  margin-left: auto;
+  margin-right: auto;
 }

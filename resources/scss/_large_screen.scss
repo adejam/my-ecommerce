@@ -16,4 +16,8 @@
   @include set-class('lg', $items, 'align-self', 'align-self');
 
   @include set-col('lg', $colNumbersAndSizes);
+
+  .navbar-item {
+    flex: 0;
+  }
 }

@@ -216,32 +216,32 @@ h6,
 
 h1,
 .h1 {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
 }
 
 h2,
 .h2 {
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
 h3,
 .h3 {
-  font-size: 1.75rem;
+  font-size: 2.75rem;
 }
 
 h4,
 .h4 {
-  font-size: 1.5rem;
+  font-size: 2.5rem;
 }
 
 h5,
 .h5 {
-  font-size: 1.25rem;
+  font-size: 2rem;
 }
 
 h6,
 .h6 {
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 .col-1,
@@ -421,6 +421,39 @@ h6,
 
 .h-full {
   height: 100%;
+}
+
+.t-0 {
+  top: 0;
+}
+
+.l-0 {
+  left: 0;
+}
+
+.r-0 {
+  right: 0;
+}
+
+.b-0 {
+  bottom: 0;
+}
+
+.m-auto {
+  margin: auto;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.mr-auto {
+  margin-right: auto;
+}
+
+.mlr-auto {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .d-none {
@@ -1417,12 +1450,12 @@ h6,
 }
 
 .navbar-link-active {
-  color: #374151;
-  border-color: #007bff;
+  color: #1da1f2;
+  border-color: #1da1f2;
 }
 .navbar-link-active:hover {
-  color: #374151;
-  border-color: #007bff;
+  color: #1da1f2;
+  border-color: #1da1f2;
 }
 
 .navbar-link-inactive {
@@ -1430,7 +1463,7 @@ h6,
   border-color: transparent;
 }
 .navbar-link-inactive:hover {
-  color: #374151;
+  color: #1da1f2;
   border-color: #d2d6dc;
 }
 
@@ -1453,7 +1486,6 @@ h6,
   background: transparent;
   font-size: 1.2rem;
   font-weight: 400;
-  line-height: 1.5;
   text-decoration: none;
   min-width: 4rem;
 }
@@ -1469,7 +1501,6 @@ h6,
   background: transparent;
   font-size: 1.2rem;
   font-weight: 400;
-  line-height: 1.5;
   text-decoration: none;
   min-width: 3rem;
   border-bottom-width: 2px;
@@ -1478,11 +1509,15 @@ h6,
 .navbar-link:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
-  color: #374151;
+  color: #1da1f2;
   border-color: #d2d6dc;
 }
 .navbar-link:hover {
   text-decoration: none;
+}
+
+.category-nav:hover, .category-nav:focus {
+  color: #1da1f2;
 }
 
 .navbar-list {
@@ -1538,7 +1573,6 @@ h6,
 
 .search-bar-result-cont {
   max-width: 60rem;
-  margin-left: 2rem;
 }
 
 .search-bar-form {
@@ -1669,6 +1703,101 @@ h6,
 
 .suggestion-div-option {
   padding: 0.6rem 0;
+}
+
+.modal {
+  z-index: 1060;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  pointer-events: auto;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.3rem;
+  outline: 0;
+  background-color: #fff;
+  margin: 30px auto;
+  width: 90%;
+  padding: 20px;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+  -webkit-animation-name: openmodal;
+          animation-name: openmodal;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+.modal-header {
+  padding: 15px;
+  border-bottom: 1px solid #e9ecef;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+}
+
+.modal-title {
+  margin-bottom: 0;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.close-modal-button {
+  float: right;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  opacity: 0.5;
+}
+.close-modal-button:focus {
+  outline: none;
+}
+
+.modal-header .close-modal-button {
+  padding: 15px;
+  margin: -15px -15px -15px auto;
+}
+
+button.close-modal-button {
+  padding: 0;
+  background: 0 0;
+  border: 0;
+  -webkit-appearance: none;
+}
+
+.modal-body {
+  position: relative;
+  flex: 1 1 auto;
+  padding: 15px;
+}
+
+.modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 15px;
+  border-top: 1px solid #e9ecef;
+  background-color: #f4f5f7;
+  flex-wrap: wrap;
+}
+
+@-webkit-keyframes openmodal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes openmodal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.c_pw {
+  color: #f5f5f5;
+  text-shadow: #c5a05b 0 0 8px;
 }
 
 @media screen and (min-width: 280px) {
@@ -2237,6 +2366,10 @@ h6,
     width: 8rem;
   }
 
+  .navbar-content {
+    width: auto;
+  }
+
   .navbar-link {
     min-width: 5rem !important;
   }
@@ -2257,7 +2390,7 @@ h6,
   }
 
   .navbar-item {
-    margin-left: 2.5rem;
+    margin-left: 2rem;
   }
 
   .navbar {
@@ -2544,6 +2677,10 @@ h6,
   .logo-img {
     width: 9rem;
   }
+
+  .modal-content {
+    max-width: 70rem;
+  }
 }
 @media screen and (min-width: 992px) {
   .container {
@@ -2820,6 +2957,10 @@ h6,
 
   .order-lg-12 {
     order: 12;
+  }
+
+  .navbar-item {
+    flex: 0;
   }
 }
 @media screen and (min-width: 1200px) {

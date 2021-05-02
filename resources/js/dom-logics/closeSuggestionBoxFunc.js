@@ -1,4 +1,4 @@
-const closeSuggestionBoxFunc = e => {
+const closeSuggestionBoxFunc = (e) => {
   const { dataset, classList } = e.currentTarget;
   const searchBarSection = document.querySelector(`#${dataset.parent_to_target}`);
   const suggestionSection = document.querySelector(`#${dataset.box}`);

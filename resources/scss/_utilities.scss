@@ -1,0 +1,110 @@
+@include set-class('', $displays, 'd', 'display');
+
+@include set-class('', $directions, 'flex', 'flex-direction');
+
+@include set-class('', $wraps, 'flex', 'flex-wrap');
+
+@include set-class('', $justify, 'justify', 'justify-content');
+
+@include set-class('', $items, 'align', 'align-items');
+
+@include set-class('', $items, 'align-self', 'align-self');
+
+@include set-class('', $positions, 'pos', 'position');
+
+@include set-class('', $flexes, 'flex', 'flex');
+
+@include set-class('', $ta, 'ta', 'text-align');
+
+@include set-class('', $transforms, 'tt', 'text-transform');
+
+@include set-class('', $overflows, 'overflow', 'overflow');
+
+@include set-class-property($colors, 'text', 'color');
+
+@include set-class-property($colors, 'bg', 'background-color');
+
+@include set-col('', $colNumbersAndSizes);
+
+@each $value in $values {
+  $calcValue: $value/2;
+
+  .m-#{$value} {
+    margin: #{$calcValue}rem !important;
+  }
+
+  .mt-#{$value} {
+    margin-top: #{$calcValue}rem !important;
+  }
+
+  .mb-#{$value} {
+    margin-bottom: #{$calcValue}rem !important;
+  }
+
+  .ml-#{$value} {
+    margin-left: #{$calcValue}rem !important;
+  }
+
+  .mr-#{$value} {
+    margin-right: #{$calcValue}rem !important;
+  }
+
+  .my-#{$value} {
+    margin-top: #{$calcValue}rem !important;
+    margin-bottom: #{$calcValue}rem !important;
+  }
+
+  .mx-#{$value} {
+    margin-left: #{$calcValue}rem !important;
+    margin-right: #{$calcValue}rem !important;
+  }
+
+  .p-#{$value} {
+    padding: #{$calcValue}rem !important;
+  }
+
+  .pt-#{$value} {
+    padding-top: #{$calcValue}rem !important;
+  }
+
+  .pb-#{$value} {
+    padding-bottom: #{$calcValue}rem !important;
+  }
+
+  .pl-#{$value} {
+    padding-left: #{$calcValue}rem !important;
+  }
+
+  .pr-#{$value} {
+    padding-right: #{$calcValue}rem !important;
+  }
+
+  .py-#{$value} {
+    padding-top: #{$calcValue}rem !important;
+    padding-bottom: #{$calcValue}rem !important;
+  }
+
+  .px-#{$value} {
+    padding-left: #{$calcValue}rem !important;
+    padding-right: #{$calcValue}rem !important;
+  }
+}
+
+.navbar-link-active {
+
+  @include navLinkBorderColor(#fe696a, #fe696a);
+
+  &:hover {
+
+    @include navLinkBorderColor(#fe696a, #fe696a);
+  }
+}
+
+.navbar-link-inactive {
+
+  @include navLinkBorderColor(#6b7280, $transparent);
+
+  &:hover {
+    color: #fe696a;
+  }
+}

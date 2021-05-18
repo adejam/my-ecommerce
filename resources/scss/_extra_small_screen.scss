@@ -1,0 +1,27 @@
+@media screen and (min-width: $breakpoint-es) {
+  .container {
+    max-width: 270px;
+  }
+
+  @include set-class('xs', $displays, 'd', 'display');
+
+  @include set-class('xs', $directions, 'flex', 'flex-direction');
+
+  @include set-class('xs', $wraps, 'flex', 'flex-wrap');
+
+  @include set-class('xs', $justify, 'justify', 'justify-content');
+
+  @include set-class('xs', $items, 'align', 'align-items');
+
+  @include set-class('xs', $items, 'align-self', 'align-self');
+
+  @include set-col('xs', $colNumbersAndSizes);
+
+  .logo-img {
+    width: 7rem;
+  }
+
+  .navbar-link {
+    min-width: 4rem;
+  }
+}

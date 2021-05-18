@@ -1,0 +1,27 @@
+@media screen and (min-width: $breakpoint-md) {
+  .container {
+    max-width: 720px;
+  }
+
+  @include set-class('md', $displays, 'd', 'display');
+
+  @include set-class('md', $directions, 'flex', 'flex-direction');
+
+  @include set-class('md', $wraps, 'flex', 'flex-wrap');
+
+  @include set-class('md', $justify, 'justify', 'justify-content');
+
+  @include set-class('md', $items, 'align', 'align-items');
+
+  @include set-class('md', $items, 'align-self', 'align-self');
+
+  @include set-col('md', $colNumbersAndSizes);
+
+  .logo-img {
+    width: 9rem;
+  }
+
+  .modal-content {
+    max-width: 70rem;
+  }
+}

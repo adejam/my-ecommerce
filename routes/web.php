@@ -14,7 +14,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get(
-    '/', function () {
+    '/',
+    function () {
         return view('welcome');
+    }
+);
+
+Route::get(
+    '/login-with-recovery-code',
+    function () {
+        return view('auth.recovery-code');
+    }
+)->name('recovery-code');
+
+Route::middleware(['auth', 'verified'])->group(
+    function () {
+        Route::get("/home", fn () => view('user.home'))->name('home');
+        Route::get("/profile", fn () => view('user.profile.profile'))->name('profile');
     }
 );

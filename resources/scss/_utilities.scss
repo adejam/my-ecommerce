@@ -27,70 +27,76 @@
 @include set-col('', $colNumbersAndSizes);
 
 @each $value in $values {
+  $calcValue: $value/2;
+
   .m-#{$value} {
-    margin: #{$value}rem;
+    margin: #{$calcValue}rem !important;
   }
 
   .mt-#{$value} {
-    margin-top: #{$value}rem;
+    margin-top: #{$calcValue}rem !important;
   }
 
   .mb-#{$value} {
-    margin-bottom: #{$value}rem;
+    margin-bottom: #{$calcValue}rem !important;
   }
 
   .ml-#{$value} {
-    margin-left: #{$value}rem;
+    margin-left: #{$calcValue}rem !important;
   }
 
   .mr-#{$value} {
-    margin-right: #{$value}rem;
+    margin-right: #{$calcValue}rem !important;
   }
 
-  .mtb-#{$value} {
-    margin: #{$value}rem 0;
+  .my-#{$value} {
+    margin-top: #{$calcValue}rem !important;
+    margin-bottom: #{$calcValue}rem !important;
   }
 
-  .mlr-#{$value} {
-    margin: 0 #{$value}rem;
+  .mx-#{$value} {
+    margin-left: #{$calcValue}rem !important;
+    margin-right: #{$calcValue}rem !important;
   }
 
   .p-#{$value} {
-    padding: #{$value}rem;
+    padding: #{$calcValue}rem !important;
   }
 
   .pt-#{$value} {
-    padding-top: #{$value}rem;
+    padding-top: #{$calcValue}rem !important;
   }
 
   .pb-#{$value} {
-    padding-bottom: #{$value}rem;
+    padding-bottom: #{$calcValue}rem !important;
   }
 
   .pl-#{$value} {
-    padding-left: #{$value}rem;
+    padding-left: #{$calcValue}rem !important;
   }
 
   .pr-#{$value} {
-    padding-right: #{$value}rem;
+    padding-right: #{$calcValue}rem !important;
   }
 
-  .ptb-#{$value} {
-    padding: #{$value}rem 0;
+  .py-#{$value} {
+    padding-top: #{$calcValue}rem !important;
+    padding-bottom: #{$calcValue}rem !important;
   }
 
-  .plr-#{$value} {
-    padding: 0 #{$value}rem;
+  .px-#{$value} {
+    padding-left: #{$calcValue}rem !important;
+    padding-right: #{$calcValue}rem !important;
   }
 }
 
 .navbar-link-active {
 
-  @include navLinkBorderColor($primary-color, $primary-color);
+  @include navLinkBorderColor(#fe696a, #fe696a);
 
   &:hover {
 
-    @include navLinkBorderColor($primary-color, $primary-color);
+    @include navLinkBorderColor(#fe696a, #fe696a);
   }
 }
 
@@ -99,7 +105,6 @@
   @include navLinkBorderColor(#6b7280, $transparent);
 
   &:hover {
-
-    @include navLinkBorderColor($primary-color, #d2d6dc);
+    color: #fe696a;
   }
 }

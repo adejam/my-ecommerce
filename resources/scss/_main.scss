@@ -1,3 +1,11 @@
+header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 900;
+  background-color: #fff;
+}
+
 .navbar {
   height: 56px;
   padding: 0 0.5rem;
@@ -12,21 +20,11 @@
   width: 6rem;
 }
 
+// .mobile-nav-links,
+
+.navbar-link,
 .navbar-btn {
-  padding: 0.25rem 0.25rem 0 0.25rem;
-  background: transparent;
-  font-size: 1.2rem;
-  font-weight: 400;
-  text-decoration: none;
-  min-width: 4rem;
-
-  &:focus {
-    outline: none;
-  }
-}
-
-.navbar-link {
-  transition-duration: 150ms;
+  transition-duration: 500ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-property:
     background-color,
@@ -39,34 +37,39 @@
     transform;
   padding: 0.25rem 0.25rem 0 0.25rem;
   background: transparent;
-  font-size: 1.2rem;
-  font-weight: 400;
+  font-size: 1.6rem;
+  font-weight: 600;
   text-decoration: none;
+}
+
+.navbar-btn {
+  min-width: 4rem;
+  color: #6b7280;
+
+  &:focus,
+  &:hover {
+    outline: none;
+    // color: $primary-color;
+    color: #fe696a;
+  }
+}
+
+// .mobile-nav-links,
+
+.navbar-link {
   min-width: 3rem;
   border-bottom-width: 2px;
   border-style: solid;
 
-  &:focus {
-    outline: 2px solid transparent;
-    outline-offset: 2px;
-
-    @include navLinkBorderColor($primary-color, #d2d6dc);
-  }
-
   &:hover {
     text-decoration: $none;
+    border-color: transparent;
   }
 }
 
-.category-nav {
-  &:hover,
-  &:focus {
-    color: $primary-color;
-  }
-}
-
-.navbar-list {
-  margin-left: 1.5rem;
+.navbar-item:hover > .navbar-link,
+.navbar-item:hover > .navbar-btn {
+  transform: scale(1.1);
 }
 
 .navbar-item {
@@ -109,11 +112,20 @@
   line-height: 1.33333;
 }
 
+.caret {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.caret,
+.nav-link-logo {
+  transform: scale(1);
+  transition: transform 0.2s ease-in-out;
+}
+
 .nav-link-logo {
   height: 2rem;
   width: 2rem;
-  transform: scale(1);
-  transition: transform 0.2s ease-in-out;
 }
 
 .search-bar-result-cont {
@@ -221,7 +233,7 @@
 
 .suggestion-section {
   margin-top: -1px;
-  z-index: 989;
+  z-index: $zindex-dropdown;
   -webkit-user-select: none;
   user-select: none;
   max-width: 60rem;
@@ -269,7 +281,7 @@
   margin: 30px auto;
   width: 90%;
   padding: 20px;
-  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0  rgba(0, 0, 0, 0.17);
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
   animation-name: openmodal;
   animation-duration: 1s;
 }
@@ -330,12 +342,139 @@ button.close-modal-button {
 }
 
 @keyframes openmodal {
-  from { opacity: 0; }
+  from {
+    opacity: 0;
+  }
 
-  to { opacity: 1; }
+  to {
+    opacity: 1;
+  }
 }
 
 .c_pw {
   color: #f5f5f5;
   text-shadow: #c5a05b 0 0 8px;
+}
+
+.dropdown {
+  position: static;
+  pointer-events: auto;
+  transform: initial;
+  transition: 0.5s;
+  z-index: $zindex-dropdown;
+}
+
+.dropdown,
+.dropdown .mega-dropdown {
+  top: initial;
+  left: initial;
+}
+
+// .dropdown-toggle-click {
+//   &:active > .dropdown {
+//     display: block;
+//   }
+// }
+
+.dropdown-menu {
+  box-shadow: none;
+  background-color: transparent;
+  transition: 0.5s;
+  padding-top: 1rem;
+  margin: 0.25rem 0 0;
+  color: #4b566b;
+  text-align: left;
+  list-style: none;
+  background-clip: padding-box;
+}
+
+.category-div {
+  font-size: 1.2rem;
+  min-width: 12rem;
+}
+
+.dropdown-title {
+  font-size: 1.6rem;
+}
+
+.dropdown-item {
+  border-bottom: 1px solid #e3e9ef;
+  padding: 1rem 1.3rem;
+}
+
+.mega-dropdown-item,
+.dropdown-item {
+  transition: all 0.5s ease-in-out;
+  clear: both;
+  color: #4b566b;
+  white-space: nowrap;
+  background-color: transparent;
+  font-size: 1.2rem;
+
+  &:focus,
+  &:hover {
+    outline: none;
+    color: #fe696a;
+  }
+}
+
+.category-section {
+  overflow-y: auto;
+}
+
+.mobile-nav {
+  position: fixed;
+  height: calc(100vh - 56px);
+  top: 56px;
+  left: 0;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  transform: translateX(100%);
+  transition: 0.65s ease-in;
+  font-weight: 500;
+}
+
+.mobile-nav-active {
+  transform: translateX(0%);
+}
+
+.mobile-nav-item {
+  background-color: #f6f9fc;
+  margin-bottom: 0.6666666667rem;
+  border-radius: 0.3125rem;
+  opacity: 0;
+}
+
+.mobile-nav-links {
+  width: 100%;
+}
+
+.hamburger div {
+  height: 3px;
+  transition: all 0.3s ease;
+}
+
+@keyframes mobileNavLinksFade {
+  from {
+    opacity: 0;
+    transform: translateX(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.hamburgerToggle .line1 {
+  transform: rotate(-45deg) translate(-4px, 4.5px);
+}
+
+.hamburgerToggle .line2 {
+  opacity: 0;
+}
+
+.hamburgerToggle .line3 {
+  transform: rotate(45deg) translate(-4px, -4.5px);
 }

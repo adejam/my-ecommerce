@@ -56,8 +56,8 @@ a {
 }
 
 a:hover {
-  color: #0056b3;
-  text-decoration: underline;
+  color: inherit;
+  text-decoration: none;
 }
 
 a:not([href]):not([tabindex]) {
@@ -244,6 +244,11 @@ h6,
   font-size: 1.5rem;
 }
 
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .col-1,
 .col-2,
 .col-3,
@@ -348,10 +353,6 @@ h6,
   box-shadow: none;
 }
 
-// .ta-center {
-//   text-align: center;
-// }
-
 .appearance_none {
   appearance: none;
 }
@@ -453,7 +454,40 @@ h6,
   margin-right: auto;
 }
 
-.mlr-auto {
+.mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.p-0 {
+  padding: 0;
+}
+
+.m-0 {
+  margin: 0;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #fe696a;
+  height: 56px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #fe696a;
 }

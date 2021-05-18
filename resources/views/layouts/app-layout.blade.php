@@ -18,7 +18,7 @@
     <div class="min-h-screen bg-white">
         {{-- @livewire('navigation-dropdown') --}}
         <x-navbar />
-        <section class="flex w-full min-h-screen">
+        <section class="flex">
             {{-- <x-side-nav :tabs="sideNavDatas()" /> --}}
 
             <main class="">
